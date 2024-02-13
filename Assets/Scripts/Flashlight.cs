@@ -9,7 +9,7 @@ public class Flashlight : MonoBehaviour
 
     public UnityAction FlashlightTurn;
 
-    private float battery = 10;
+    [SerializeField] private float battery;
     [SerializeField] private float decrease;
 
     private void Start()
