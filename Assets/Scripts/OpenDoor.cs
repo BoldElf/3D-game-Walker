@@ -5,12 +5,16 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     [SerializeField] private PlayerInvenotry playerInvenotry;
+    [SerializeField] private Transform placeToTeleport;
+    [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource soundPanel; 
 
     public void DoorOpen()
     {
         if(playerInvenotry.Key > 0)
         {
-            Debug.Log("open"); // !!!!  Заглушка под перенос на другую сцену  !!!!
+            player.transform.position = placeToTeleport.position;
+            soundPanel.Stop();
         }
         else
         {

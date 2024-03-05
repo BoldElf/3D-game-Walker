@@ -11,10 +11,12 @@ public class Flashlight : MonoBehaviour
 
     [SerializeField] private float battery;
     [SerializeField] private float decrease;
+    [SerializeField] private ControllerTag controllerTag;
 
     private void Start()
     {
         lightObject = gameObject.GetComponentInChildren<Light>();
+        controllerTag.pickupBattery += BatteryPickup;
     }
 
     private void Update()
@@ -55,5 +57,9 @@ public class Flashlight : MonoBehaviour
                 lightObject.enabled = false;
             }
         }
+    }
+    private void BatteryPickup(GameObject objectGame)
+    {
+        battery += 10;
     }
 }

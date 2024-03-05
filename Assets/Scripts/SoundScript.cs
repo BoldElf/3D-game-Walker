@@ -20,6 +20,15 @@ public class SoundScript : MonoBehaviour
 
     [SerializeField] private AudioClip ZombieGo;
 
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private PlayerHealth playerHealth;
+
+    [SerializeField] private AudioClip doorSound;
+    [SerializeField] private DoorOpener doorOpener;
+
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private PasswordKeyPad passwordKeyPad;
+
     List<AudioClip> sound = new List<AudioClip>();
 
 
@@ -31,6 +40,9 @@ public class SoundScript : MonoBehaviour
         sound.Add(OpenDoorSound);
         sound.Add(spawnZombie);
         sound.Add(ZombieGo);
+        sound.Add(hitSound);
+        sound.Add(doorSound);
+        sound.Add(clickSound);
 
         buttonElevator.buttonSound += SoundButton;
         buttonElevator.elevatorSound += SoundButton;
@@ -38,6 +50,10 @@ public class SoundScript : MonoBehaviour
         zombieController.spawnZombie += SoundButton;
         zombieController.ZombieWalkOn += SoundButton;
         zombieController.ZombieWalkOff += SoundOff;
+        playerHealth.damageSound += SoundButton;
+        doorOpener.openSound += SoundButton;
+        passwordKeyPad.soundClick += SoundButton;
+
     }
 
     private void SoundButton(int number)

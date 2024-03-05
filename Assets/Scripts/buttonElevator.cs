@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class ButtonElevator : MonoBehaviour
 {
     //[SerializeField] private Touch touch;
-    [SerializeField] private ControllerLayer controllerLayer;
+    [SerializeField] private ControllerTag controllerLayer;
     private Animator animator;
 
     [SerializeField] private float timeToReload;

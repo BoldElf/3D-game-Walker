@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerInvenotry : MonoBehaviour
 {
     [SerializeField] private KeyPickup keyPickup;
-
     private int key;
 
     public int Key => key;

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class KeyPickup : MonoBehaviour
 {
-    [SerializeField] private ControllerLayer controllerLayer;
+    [SerializeField] private ControllerTag controllerLayer;
 
     public UnityAction plusKey;
 
@@ -14,9 +14,9 @@ public class KeyPickup : MonoBehaviour
         controllerLayer.pickupKey += keyPickup;
     }
 
-    private void keyPickup()
+    private void keyPickup(GameObject objectGame)
     {
         plusKey?.Invoke(); // PlayerInventory
-        Destroy(gameObject);
+        Destroy(objectGame);
     }
 }

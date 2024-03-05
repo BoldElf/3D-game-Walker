@@ -16,8 +16,11 @@ public class MouseLook : MonoBehaviour
     }
 
 
+
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensetive * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensetive * Time.deltaTime;
 
